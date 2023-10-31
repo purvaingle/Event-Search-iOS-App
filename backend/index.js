@@ -137,8 +137,8 @@ app.get('/getevent', async (req, res) =>{
     // console.log(art_name)
     // console.log();
     const spotifyApi = new SpotifyWebApi({
-        clientId: '44f82723d3f04d08a98afc187a3b7fd7',
-        clientSecret: 'e7c8ba25c1ff4b9986c2b16fa3fc9b21',
+        clientId: '',
+        clientSecret: '',
       }) 
 
       try{const result= await spotifyApi.clientCredentialsGrant()
