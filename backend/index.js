@@ -1,5 +1,4 @@
 
-// // ********************
 const SpotifyWebApi = require('spotify-web-api-node');
 dict_segmentID = {
     "Music":"KZFzniwnSyZfZ7v7nJ",
@@ -143,13 +142,8 @@ app.get('/getevent', async (req, res) =>{
       }) 
 
       try{const result= await spotifyApi.clientCredentialsGrant()
-//   .then(async data => {
-    // console.log("entered spotify")
-    // console.log("result");
-    // console.log(result);
-    // Set the access token on the Spotify Web API object
+
     spotifyApi.setAccessToken(result.body['access_token']);
-    // 'BQBg-zMX9RdQkRjByoP3QUBE1L8ky07fUkluxlbXeheOo_ior-9ZhNsfqqycq4ua42Xa78Vp1jbz-IkAo_s2JCg-7aIcQ_QpgzKGCIu92fUobO7sKWKQ'
     console.log(result.body['access_token'])
 
     // Use the searchArtists() method to search for the artist
@@ -181,11 +175,7 @@ app.get('/getevent', async (req, res) =>{
 
     catch(error){console.log(error);
     }
-
-   
-
-    
-   
+  
   });
 
   app.get('/getvenue', async (req, res) => {
@@ -196,9 +186,8 @@ app.get('/getevent', async (req, res) =>{
     console.log("VENUEEEEEEE");
     console.log(req.query)
 
-    // https://app.ticketmaster.com/discovery/v2/events.json?apikey=Z3ZZ0HqSBAnjLGhrJVne6ajpAuUa2upX
     axios
-      .get(`https://app.ticketmaster.com/discovery/v2/venues.json?apikey=Z3ZZ0HqSBAnjLGhrJVne6ajpAuUa2upX&keyword=${venName}`)
+      .get(`https://app.ticketmaster.com/discovery/v2/venues.json?apikey=&keyword=${venName}`)
       .then(venresp => {
         let vendetail = venresp.data;
          console.log(vendetail);
@@ -217,7 +206,7 @@ app.get('/getevent', async (req, res) =>{
     
     const key=req.query.keyword;
     if (key){
-    const suggresponse=await axios.get(`https://app.ticketmaster.com/discovery/v2/suggest?apikey=Z3ZZ0HqSBAnjLGhrJVne6ajpAuUa2upX&keyword=${key}`)
+    const suggresponse=await axios.get(`https://app.ticketmaster.com/discovery/v2/suggest?apikey=&keyword=${key}`)
   
     const autocomplete=suggresponse.data._embedded?.attractions?.map((attraction)=>{
         console.log(attraction.name)
@@ -233,17 +222,6 @@ catch(error){
     console.log(error)
 }
     });
-    
-
-  
-  
-
-  
-
-  // credentials are optional
-  
 
 app.listen(PORT, () => console.log(`listening on port ${PORT} `));
-
-// // ************************
 
