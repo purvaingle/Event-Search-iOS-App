@@ -111,69 +111,6 @@ app.get('/getdata', async (req, res) =>{
       
 
 
-
-//       console.log("req");
-//       console.log(req)
-//     var keyword=req.query.keyword;
-//     var distance=req.query.distance;
-//     var location=req.query.location;
-//     var category=req.query.category;
-//     var lat=req.query.lat;
-//     var lng=req.query.long;
-//     console.log(lat,lng)
-//     console.log("abcghjfl")
-//     var geoPoint=geohash.encode(lat,lng, 7);
-//     console.log("category");
-//     console.log(category);
-
-//     if (distance==0){
-//         distance=10;
-//     }
-//     console.log(geoPoint);
-//     var segmentID='';
-// console.log(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&keyword=${keyword}&radius=${distance}&unit=miles&segmentId=${segmentID}&geoPoint=${geoPoint}`)
-//     segmentID=dict_segmentID[category];
-//     console.log("Segment)");
-//     console.log(segmentID)
-//     console.log("parameters");
-//     console.log(keyword,distance,location);
-//     axios
-//       .get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&keyword=${keyword}&radius=${distance}&unit=miles&segmentId=${segmentID}&geoPoint=${geoPoint}`)
-//       .then(resp => {
-//         let detail = resp.data;
-//          console.log(detail);
-//         res.send(detail);
-//       })
-//       .catch(err => console.log(err));}
-//       catch(error){
-//         console.log(error)
-
-//       }
-//   });
-
-
-//   app.get('/getevent',  (req, res) =>{
-//     try{
-
-    
-//     var eID=req.query.id;
-
-    
-
-//     console.log(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=Z3ZZ0HqSBAnjLGhrJVne6ajpAuUa2upX&id=${eID}`);
-//     axios
-//       .get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=Z3ZZ0HqSBAnjLGhrJVne6ajpAuUa2upX&id=${eID}`)
-//       .then(response => {
-//         let e_details = response.data;
-//          console.log("this is from node js"+e_details);
-//         res.send(e_details);
-//       })
-//       .catch(err => console.log(err));}
-//       catch(error){
-//         console.log(error);
-//       }
-//   });
-
 app.get('/getevent', async (req, res) =>{
     try{
       var eID=req.query.id;
