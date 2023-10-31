@@ -27,7 +27,7 @@ app.use('/', express.static(angpath));
 // })
 
 
-API_KEY = "Z3ZZ0HqSBAnjLGhrJVne6ajpAuUa2upX";
+API_KEY = "";
 const PORT =process.env.PORT || 3000;
 
 const cors = require('cors')
